@@ -847,8 +847,8 @@ button.btn--primary:focus,
 input[type="submit"].btn--primary:focus,
 input[type="reset"].btn--primary:focus,
 input[type="button"].btn--primary:focus {
-    background: #33a242;
-    border-color: #33a242;
+    background: #D04B2A;
+    border-color: #D04B2A;
 }
 
 
@@ -1808,7 +1808,27 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     line-height: 1.333;
     margin-top: 0;
     color: #FFFFFF;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid #e96443; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(35, end),
+      blink-caret .75s step-end infinite;
 }
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    40% { border-color: #e96443; }
+  }
 
 .home-content__main {
     padding-top: 24rem;
